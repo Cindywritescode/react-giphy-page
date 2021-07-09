@@ -16,13 +16,25 @@ class Hello extends Component {
     super(props);
 
     this.state = {
-      clicked: false
+      clicked: false,
+      counter: 0
     };
+  }
+
+  handleClick = () => {
+    // change the state!
+    this.setState({
+      clicked: !this.state.clicked,
+      counter: this.state.counter + 1
+    });
   }
 
   render() {
     return (
-      <h1><strong>Hello, {this.props.name}</strong></h1>
+      <h1 className={this.state.clicked ? 'clicked' : null}
+        onClick={this.handleClick}>
+        Hello, {this.props.name} {this.state.counter}
+      </h1>
     )
   }
 }
