@@ -1,5 +1,6 @@
 {
   "license": "UNLICENSED",
+  "homepage": "https://cindywritescode.github.io/react-giphy-page/",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -38,6 +39,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "lint": "eslint './src/**/*.js*'",
-    "deploy": "webpack -p && gh-pages -d dist"
-  }
+    "predeploy": "yarn build",
+    "deploy": "webpack -p && gh-pages -d build"
+  } 
 }
