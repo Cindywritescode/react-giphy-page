@@ -5,15 +5,16 @@ import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      gifts: [],
+      gifs: [],
       selectedGifId:"5bdhq6YF0szPaCEk9Y"
     };
-    this.search("cutie");
+    this.search("cute");
     this.selectGif = this.selectGif.bind(this);
   }
 
@@ -25,7 +26,7 @@ class App extends Component {
       limit: 10
     }, (error, result) => {
       this.setState({
-        gifts: result.data
+        gifs: result.data
       });
     });
   }
@@ -37,10 +38,10 @@ class App extends Component {
   }
 
   render() {
-    const gifs = [
-      { id: "dz1b117ztVkHBG6b6p" },
-      { id: "V3pYaPO9QdLPO" }
-    ];
+    // const gifs = [
+    //   { id: "dz1b117ztVkHBG6b6p" },
+    //   { id: "V3pYaPO9QdLPO" }
+    // ];
 
     return (
       <div>
@@ -51,7 +52,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifts} selectGif={this.selectedGif} />
+          <GifList gifs={this.state.gifs} selectGif={this.selectGif} />
         </div>
       </div>
     );
