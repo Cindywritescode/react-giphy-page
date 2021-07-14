@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import giphy from 'giphy-api';
 
+import "./FontawsomeIcons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
@@ -46,7 +48,10 @@ class App extends Component {
     return (
       <div>
         <div className="left-scene">
-          <SearchBar searchFunction={this.search} />
+          <div className="search-section">
+            <FontAwesomeIcon icon="search" className="search-icon" />
+            <SearchBar searchFunction={this.search} />
+          </div>
           <div className="selected-gif">
             <Gif id= {this.state.selectedGifId} />
           </div>
