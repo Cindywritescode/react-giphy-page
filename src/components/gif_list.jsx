@@ -2,25 +2,10 @@
 import React from 'react';
 import Gif from './gif';
 
-// class GifList extends Component {
-//   renderList = () => {
-//     return this.props.gifts.map(gif => <Gif id={gif.id} key={gif.id} />);
-//   }
-
-//   render() {
-//     return (
-//       <div className="gif-list">
-//         {this.renderList()}
-//       </div>
-//     );
-//   }
-// }
-
-
-const GifList = (props) => {
+const GifList = ({ gifs, selectGif }) => {
   return (
     <div className="gif-list">
-      {props.gifs.map(gif => <Gif id={gif.id} key={gif.id} selectGif={props.selectGif} />)}
+      {gifs.map(({id}) => <Gif id={id} key={id} selectGif={selectGif} />)}
     </div>
   );
 };
