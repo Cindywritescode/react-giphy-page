@@ -33,13 +33,14 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "giphy-api": "^2.0.2",
-    "react": "16.2",
-    "react-dom": "16.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "lint": "eslint './src/**/*.js*'",
+    "build": "webpack -p",
     "predeploy": "yarn build",
-    "deploy": "webpack -p && gh-pages -d build"
-  } 
+    "deploy": "gh-pages -d dist"
+  }
 }

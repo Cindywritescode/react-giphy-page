@@ -1,26 +1,23 @@
-// eslint jsx-a11y/alt-text: off 
-// eslint jsx-a11y/no-noninteractive-element-interactions: off
+import React from 'react';
 
-import React, { Component } from 'react';
-
-class Gif extends Component {
-  handleClick = () => {
-    if (this.props.selectGif) {
-      this.props.selectGif(this.props.id);
-    }
+const Gif = ({
+  id,
+  selectGif = () => {}
+}) => {
+  if (!id) {
+    return null;
   }
 
-  render() {
-    // handling null
-    if (!this.props.id) {
-      return null;
-    }
-
-    const src = `https://media.giphy.com/media/${this.props.id}/giphy.gif`
-    return (
-      <img src={src} className="gif" onClick={this.handleClick} />
-    );
-  }
-}
+  const src = `https://media.giphy.com/media/${id}/giphy.gif`;
+  return (
+    <img
+      alt="Giphy"
+      role="presentation"
+      src={src}
+      className="gif"
+      onClick={() => selectGif(id)}
+    />
+  );
+};
 
 export default Gif;
