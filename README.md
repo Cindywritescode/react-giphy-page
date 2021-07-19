@@ -16,3 +16,10 @@ Following the lecture, I found the Font awesome icon didn't show as expect. Afte
 - [React Icons doc](https://react-icons.github.io/react-icons/)
 
 - [Youtube tutorial](https://www.youtube.com/watch?v=QZSxSjKmW_Y&ab_channel=D%27Coders)
+
+
+## Scale the app
+
+- A 'Load More' button added to the right section(gif list). It loads extra 10 gif images every time press the button.
+
+- Further funtion to do : enable share funtion to the selected gif image. 
